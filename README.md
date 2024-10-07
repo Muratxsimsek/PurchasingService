@@ -2,7 +2,7 @@ Purchasing Service
 
 Steps to run project on docker :
 
-1 - Go to Purchasing Service project folder in terminal
+0 - Go to Purchasing Service project folder in terminal
   cd /Users/muratsimsek/github/PurchasingService 
 
 1 - All tests will run 
