@@ -20,4 +20,4 @@ Swagger Documantation Address
 
 Java Doc Files
   mvn javadoc:javadoc , after execution of the command (It was run by me)
-  you can find the generated java doc file on **/docs/javadoc ** directory
+  you can find the generated java doc file on **/docs/javadoc** directory
