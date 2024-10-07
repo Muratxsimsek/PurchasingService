@@ -52,8 +52,12 @@ you can find under **/docs/postman** directory
     UPDATE PRODUCT
 
     curl -L -X PUT 'http://localhost:8080/api/products/Laptop' 
-    -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJKb2huIiwibGFzdE5hbWUiOiJEb2UiLCJzdWIiOiJqb2huQGRvZS5jb20iLCJpYXQiOjE3MjgyNzg2NDU4NzAsImV4cCI6MTcyODMxNDY0NTg3MH0=.E4cMP6rsMbtdoSBWX8eLeD-uhLrYrxXKQgNk2dQAqCDzrNn1qkNBP9djGAebJHvcOtdmK-ZkYAUPbdZfQ88X90sT6z8bV0HPKy3NFjzRrSG66T5n8Q2sGCbiLsDsKC9nUTQYD-ZcGaHeJWcRaZXD5DciOWn8kxcdaUwYKwpSm8H6hVhm268ct38JSJ-rTfbL9Uuy6EGCTM_wJU3SpcX_oi-rhxJqZ1dK5EmL1ED0COAN2GU1JbvdMxxLGM3lwa7baS7NxeBUfMfCbHKyAnI4r8dkLcwRiZLkZuFxisbgCHguMaYf2Ug8nYBH_7pOhWcVqJMhn7Zh1NlZEgn_d6nheg' 
-    -H 'Cookie: JSESSIONID=A65500D6471D762D3F8F6A4B19BF8006'
+    -H 'Content-Type: application/json' 
+    -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJKb2huIiwibGFzdE5hbWUiOiJEb2UiLCJzdWIiOiJqb2huQGRvZS5jb20iLCJpYXQiOjE3MjgyOTI3MzY0ODEsImV4cCI6MTcyODMyODczNjQ4MX0=.fwa-wTjIVl1PHUtTeOOiREnYXtJHSebZRI_1pd9eYr7Smqp5H9WMM2K3wVufDBFkrmZU16VxbIbsy45CAajbPtJPDZnWn0Pg9ph5OPoRMFae8AJZZzg6Jlub6UMx6s-e-b4oDTsFG14j8s9cEF85CC1Tz0Jp3ZTsRjeA2PV0sx815yYwmi_FaWYPo8RItkhhNKwUIUcWY3Sp9APwXqXC2FKaJldqkFMcQ9VtDmnTIYeXCAH2t5ADoBcKEezSZgMGkNFpM2EV9trXWTaWwwTnm1n5pUvPYSe0vwINawaa-WMlIEbZRJ6FgnoWqTEMMLpZz0Vbg5HfZu9UyeJlP9gHzA' 
+    -H 'Cookie: JSESSIONID=5CEFFACA6BAF14F9538E612EAA011EB0' 
+    -d '{
+    "description": "laptop 3"
+    }'
 
 <br/>
 
