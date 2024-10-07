@@ -30,7 +30,8 @@ you can find under **/docs/postman** directory
 
     GET BEARER TOKEN
 
-	curl -L 'http://localhost:8080/api/auth/login' -H 'Content-Type: application/json' --data-raw '{
+	curl -L 'http://localhost:8080/api/auth/login' -H 'Content-Type: application/json' 
+    --data-raw '{
     "firstName": "John",
     "lastName": "Doe",
     "email": "john@doe.com",
