@@ -1,5 +1,6 @@
 package com.emlakjet.purchasing.service;
 
+import com.emlakjet.purchasing.exception.ProductNotFoundException;
 import com.emlakjet.purchasing.persistence.entity.ProductEntity;
 import com.emlakjet.purchasing.persistence.repository.ProductRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -65,18 +66,19 @@ public class ProductServiceTest {
     }
 
     @Test
-    public void should_updateProduct_UpdateProduct_CheckCache() {
+    public void should_updateProduct_UpdateProduct_CheckCache() throws ProductNotFoundException {
 
         ProductEntity product = new ProductEntity();
-        product.setName("Laptop New");
+        product.setName("Laptop");
+        product.setDescription("New Laptop Bought");
         when(productRepository.save(product)).thenReturn(product);
 
-        ProductEntity updatedProduct = productService.updateProduct(product);
+        ProductEntity updatedProduct = productService.updateProduct(product.getName(), product);
 
         assertThat(updatedProduct).isEqualTo(product);
         verify(productRepository, times(1)).save(product);
 
-        ProductEntity cachedProduct = cacheManager.getCache("products").get("Laptop New", ProductEntity.class);
+        ProductEntity cachedProduct = cacheManager.getCache("products").get("Laptop", ProductEntity.class);
         assertThat(cachedProduct).isEqualTo(product);
     }
 

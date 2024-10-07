@@ -53,7 +53,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"name\": \"Laptop 2\",\n  \"description\": \"laptop 2\"\n}",
+					"raw": "{\n  \"name\": \"Laptop\",\n  \"description\": \"laptop\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -90,6 +90,15 @@
 				},
 				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"description\": \"laptop 3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "http://localhost:8080/api/products/Laptop",
 					"protocol": "http",
@@ -122,7 +131,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/products/Laptop",
+					"raw": "http://localhost:8080/api/products/Laptop 1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -131,7 +140,7 @@
 					"path": [
 						"api",
 						"products",
-						"Laptop"
+						"Laptop 1"
 					]
 				}
 			},

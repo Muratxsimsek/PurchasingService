@@ -1,5 +1,6 @@
 package com.emlakjet.purchasing.service;
 
+import com.emlakjet.purchasing.exception.ProductNotFoundException;
 import com.emlakjet.purchasing.persistence.entity.ProductEntity;
 import com.emlakjet.purchasing.persistence.repository.ProductRepository;
 import lombok.AllArgsConstructor;
@@ -23,14 +24,19 @@ public class ProductService {
         return productRepository.findByName(name);
     }
 
-    @CachePut(key = "#product.name")
     public ProductEntity createProduct(ProductEntity product) {
         return productRepository.save(product);
     }
 
-    @CachePut(key = "#product.name")
-    public ProductEntity updateProduct(ProductEntity product) {
-        return productRepository.save(product);
+    @CachePut(key = "#name")
+    public ProductEntity updateProduct(String name, ProductEntity product) throws ProductNotFoundException {
+        ProductEntity currentProduct = productRepository.findByName(name);
+        if (currentProduct != null) {
+            currentProduct.setDescription(product.getDescription());
+            return productRepository.save(currentProduct);
+        } else {
+            throw new ProductNotFoundException();
+        }
     }
 
     @CacheEvict(key = "#name")

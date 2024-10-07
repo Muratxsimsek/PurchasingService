@@ -56,9 +56,9 @@ public class ProductController {
             @ApiResponse(responseCode = "500", description = "Internal server error")
     })
     @PutMapping("/{name}")
-    public ProductDto updateProduct(@PathVariable String name, @RequestBody ProductDto updatedProduct) {
+    public ProductDto updateProduct(@PathVariable String name, @RequestBody ProductDto updatedProduct) throws ProductNotFoundException {
         ProductEntity productEntity = toProductEntity(updatedProduct);
-        ProductEntity updatedProductEntity = productService.updateProduct(productEntity);
+        ProductEntity updatedProductEntity = productService.updateProduct(name, productEntity);
         return toProductDto(updatedProductEntity);
     }
 

@@ -160,7 +160,7 @@ class ProductControllerTest {
                 .then()
                 .log().everything()
                 .statusCode(200)
-                .body("data.name", equalTo("Rose"))
+                .body("data.name", equalTo("Laptop"))
                 .body("data.description", equalTo("Red Rose"))
                 .body("message", equalTo(null));
     }
