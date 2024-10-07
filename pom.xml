@@ -179,6 +179,19 @@
 					<target>17</target>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.4.0</version>
+				<configuration>
+					<reportOutputDirectory>${project.basedir}/docs/javadoc</reportOutputDirectory>
+					<encoding>UTF-8</encoding>
+					<doclint>none</doclint>
+					<quiet>true</quiet>
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 

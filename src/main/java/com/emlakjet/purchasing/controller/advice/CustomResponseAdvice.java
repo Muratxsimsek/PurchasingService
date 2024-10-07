@@ -20,7 +20,7 @@ public class CustomResponseAdvice implements ResponseBodyAdvice<Object> {
 
         if (body instanceof CommonResponseDTO) {
             return body;
-        } else if (mediaType.equals(MediaType.TEXT_PLAIN) || mediaType.equals(MediaType.APPLICATION_JSON)) {
+        } else if (mediaType.equals(MediaType.TEXT_PLAIN) || serverHttpRequest.getURI().getPath().contains("/v3/api-docs")) {
             return body;
         } else {
             return new CommonResponseDTO<>(body);

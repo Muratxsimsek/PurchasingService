@@ -1,0 +1,12 @@
+com.emlakjet.purchasing
+com.emlakjet.purchasing.config
+com.emlakjet.purchasing.controller
+com.emlakjet.purchasing.controller.advice
+com.emlakjet.purchasing.controller.advice.Dto
+com.emlakjet.purchasing.controller.Dto
+com.emlakjet.purchasing.event
+com.emlakjet.purchasing.exception
+com.emlakjet.purchasing.persistence.entity
+com.emlakjet.purchasing.persistence.repository
+com.emlakjet.purchasing.security
+com.emlakjet.purchasing.service
