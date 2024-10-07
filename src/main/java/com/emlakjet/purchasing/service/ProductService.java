@@ -37,7 +37,7 @@ public class ProductService {
     public boolean deleteProduct(String name) {
         ProductEntity product = productRepository.findByName(name);
         if (product != null) {
-            productRepository.delete(product);
+            productRepository.deleteByName(product.getName());
             return true;
         }
         return false;

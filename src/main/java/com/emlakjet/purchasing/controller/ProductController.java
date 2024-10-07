@@ -1,6 +1,7 @@
 package com.emlakjet.purchasing.controller;
 
 import com.emlakjet.purchasing.controller.Dto.ProductDto;
+import com.emlakjet.purchasing.controller.advice.Dto.CommonResponseDTO;
 import com.emlakjet.purchasing.exception.ProductCantRemovedException;
 import com.emlakjet.purchasing.exception.ProductNotFoundException;
 import com.emlakjet.purchasing.persistence.entity.ProductEntity;
@@ -67,10 +68,14 @@ public class ProductController {
             @ApiResponse(responseCode = "500", description = "Internal server error")
     })
     @DeleteMapping("/{name}")
-    public void deleteProduct(@PathVariable String name) throws ProductCantRemovedException {
+    public CommonResponseDTO deleteProduct(@PathVariable String name) throws ProductCantRemovedException {
         boolean deleted = productService.deleteProduct(name);
         if (!deleted) {
             throw new ProductCantRemovedException();
+        } else {
+            return CommonResponseDTO.builder()
+                    .data(null)
+                    .message("Product Deleted").build();
         }
     }
 

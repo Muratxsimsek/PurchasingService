@@ -1,2 +1,2 @@
 TRUNCATE TABLE invoice;
-TRUNCATE TABLE product;
+-- TRUNCATE TABLE product;
