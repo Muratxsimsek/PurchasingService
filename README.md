@@ -5,13 +5,13 @@ Steps to run project on docker :
 0 - Go to Purchasing Service **project folder** in terminal
   cd /Users/muratsimsek/github/PurchasingService 
 
-1 - All tests will run
+1 - All tests will run <br/>
   **docker compose build**
 
-2 - Postgres DB, Kafka, Zookeeper and Purchasing_Service containers will be up silently
+2 - Postgres DB, Kafka, Zookeeper and Purchasing_Service containers will be up silently <br/>
   **docker compose up -d**
 
-3- Shut down containers
+3- Shut down containers <br/>
   **docker compose down**
 
 
