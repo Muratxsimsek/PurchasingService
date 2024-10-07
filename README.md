@@ -2,7 +2,8 @@
 
 Steps to run project on docker :
 
-0 - Go to Purchasing Service **project folder** in terminal cd /Users/muratsimsek/github/PurchasingService
+0 - Go to Purchasing Service **project folder** in terminal <br/>
+    **cd /Users/muratsimsek/github/PurchasingService**
 
 1 - All tests will run <br/>
 **docker compose build**
