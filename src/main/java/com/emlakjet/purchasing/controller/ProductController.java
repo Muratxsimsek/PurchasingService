@@ -2,6 +2,7 @@ package com.emlakjet.purchasing.controller;
 
 import com.emlakjet.purchasing.controller.Dto.ProductDto;
 import com.emlakjet.purchasing.exception.ProductCantRemovedException;
+import com.emlakjet.purchasing.exception.ProductNotFoundException;
 import com.emlakjet.purchasing.persistence.entity.ProductEntity;
 import com.emlakjet.purchasing.service.ProductService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -26,13 +27,12 @@ public class ProductController {
             @ApiResponse(responseCode = "500", description = "Internal server error")
     })
     @GetMapping("/{name}")
-    public ProductDto getProductByName(@PathVariable String name) {
-
+    public ProductDto getProductByName(@PathVariable String name) throws ProductNotFoundException {
         ProductEntity productEntity = productService.getProductByName(name);
         if (productEntity != null) {
             return toProductDto(productEntity);
         } else {
-            return null;
+            throw new ProductNotFoundException();
         }
     }
 
